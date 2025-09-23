@@ -25,11 +25,18 @@ class LoginFragment : Fragment() {
 
         btnLogin.setOnClickListener {
             // Navigate to Homepage after login
-            (activity as MainActivity).navigateToHomepage()
+            try {
+                (activity as? MainActivity)?.navigateToHomepage()
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
         }
 
         linkRegister.setOnClickListener {
-            (activity as MainActivity).navigateToRegister()
+            // Switch to Register tab (index 0)
+            val mainActivity = activity as MainActivity
+            val viewPager = mainActivity.findViewById<androidx.viewpager2.widget.ViewPager2>(R.id.view_pager)
+            viewPager.currentItem = 0
         }
     }
 }

@@ -1,173 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#6366F1"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="@color/white"
     tools:context=".RegisterFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="40dp" />
+
+    <EditText
+        android:id="@+id/edt_username"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:hint="Username"
+        android:background="@drawable/edit_txt_bg"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/edt_email"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:hint="Email"
+        android:background="@drawable/edit_txt_bg"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:inputType="textEmailAddress"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/edt_phone"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:hint="Phone"
+        android:background="@drawable/edit_txt_bg"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:inputType="phone"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/edt_password"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:hint="Password"
+        android:background="@drawable/edit_txt_bg"
+        android:paddingHorizontal="16dp"
+        android:textSize="16sp"
+        android:inputType="textPassword"
+        android:layout_marginBottom="24dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp">
+        android:orientation="horizontal"
+        android:layout_marginBottom="32dp">
 
-        <!-- Header with app name and tabs -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <CheckBox
+            android:id="@+id/cb_terms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="32dp">
+            android:text="By checking the box you agree to our"
+            android:textColor="@color/gray"
+            android:textSize="11sp"
+            android:layout_marginEnd="5dp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="MyTabLayout"
-                android:textColor="@android:color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_marginBottom="16dp" />
-
-            <!-- Tabs -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@android:color/white"
-                android:layout_marginHorizontal="32dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Register"
-                    android:textColor="#6366F1"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:gravity="center"
-                    android:padding="12dp"
-                    android:background="@android:color/white" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Login"
-                    android:textColor="#9CA3AF"
-                    android:textSize="16sp"
-                    android:gravity="center"
-                    android:padding="12dp"
-                    android:background="#F3F4F6" />
-
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- Main content card -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/txt_tac"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@android:color/white"
-            android:padding="32dp"
-            android:layout_marginHorizontal="16dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Register"
-                android:textColor="#1F2937"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_marginBottom="32dp" />
-
-            <EditText
-                android:id="@+id/edt_username"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:hint="Username"
-                android:background="#F3F4F6"
-                android:paddingHorizontal="16dp"
-                android:textSize="16sp"
-                android:layout_marginBottom="16dp" />
-
-            <EditText
-                android:id="@+id/edt_email"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:hint="Email"
-                android:background="#F3F4F6"
-                android:paddingHorizontal="16dp"
-                android:textSize="16sp"
-                android:inputType="textEmailAddress"
-                android:layout_marginBottom="16dp" />
-
-            <EditText
-                android:id="@+id/edt_phone"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:hint="Phone"
-                android:background="#F3F4F6"
-                android:paddingHorizontal="16dp"
-                android:textSize="16sp"
-                android:inputType="phone"
-                android:layout_marginBottom="16dp" />
-
-            <EditText
-                android:id="@+id/edt_password"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:hint="Password"
-                android:background="#F3F4F6"
-                android:paddingHorizontal="16dp"
-                android:textSize="16sp"
-                android:inputType="textPassword"
-                android:layout_marginBottom="16dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="32dp">
-
-                <CheckBox
-                    android:id="@+id/cb_terms"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="By checking the box you agree to our Terms and Conditions."
-                    android:textColor="#6B7280"
-                    android:textSize="12sp"
-                    android:layout_marginStart="8dp" />
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/btn_register"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:text="Register"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:background="#6366F1"
-                android:layout_marginBottom="16dp" />
-
-            <TextView
-                android:id="@+id/link_login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Already Have an Account? Login"
-                android:textColor="#6366F1"
-                android:textSize="14sp"
-                android:gravity="center" />
-
-        </LinearLayout>
+            android:focusable="true"
+            android:text="@string/terms_and_conditions"
+            android:textColor="#5865F2"
+            android:textSize="11sp"
+            android:clickable="true" />
 
     </LinearLayout>
 
-</ScrollView>
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Register"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:background="@drawable/btn_bg"
+        android:layout_marginBottom="16dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="@string/already_have_an_account"
+            android:textColor="@color/gray"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/link_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:text="Login"
+            android:textColor="#6366F1"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:clickable="true" />
+
+    </LinearLayout>
+</LinearLayout>
