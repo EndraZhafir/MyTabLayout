@@ -6,37 +6,45 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@android:color/white"
+    android:padding="24dp"
     tools:context=".HomepageFragment">
 
-    <!-- Card Container -->
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@android:color/white"
-        android:padding="32dp"
-        android:gravity="center">
+        android:text="🎉 Welcome!"
+        android:textColor="#1F2937"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Welcome"
-            android:textColor="#1F2937"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:layout_marginBottom="32dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You have successfully logged in to MyTabLayout App!"
+        android:textColor="#6B7280"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
 
-        <!-- Welcome Character Image -->
-        <TextView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:text="👋"
-            android:textSize="80sp"
-            android:gravity="center"
-            android:background="#F3F4F6"
-            android:layout_marginBottom="24dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Use the logout button in the toolbar to return to the login screen."
+        android:textColor="#9CA3AF"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_marginBottom="32dp" />
 
-    </LinearLayout>
+    <!-- Welcome Animation/Image Placeholder -->
+    <TextView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:text="✅"
+        android:textSize="80sp"
+        android:gravity="center"
+        android:background="#E8F5E8"
+        android:layout_marginBottom="24dp" />
 
 </LinearLayout>

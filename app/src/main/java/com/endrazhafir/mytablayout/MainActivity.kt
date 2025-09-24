@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -41,14 +41,17 @@ class MainActivity : AppCompatActivity() {
         viewPager.currentItem = 1
 
         supportActionBar?.elevation = 0f
-    }
-
-    override fun onBackPressed() {
-        if (isOnHomepage) {
-            navigateBackToTabs()
-        } else {
-            super.onBackPressed()
-        }
+        
+        // Handle back button properly
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (isOnHomepage) {
+                    navigateBackToTabs()
+                } else {
+                    finish()
+                }
+            }
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -61,7 +64,6 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_logout -> {
-                Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show()
                 navigateBackToTabs()
                 true
             }
@@ -75,8 +77,7 @@ class MainActivity : AppCompatActivity() {
             
             // Replace the entire layout with homepage
             isOnHomepage = true
-            invalidateOptionsMenu()
-
+            
             Log.d("MainActivity", "Setting visibility")
             // Hide tabs and viewpager, show fragment container
             tabLayout.visibility = android.view.View.GONE
@@ -85,17 +86,18 @@ class MainActivity : AppCompatActivity() {
 
             Log.d("MainActivity", "Starting fragment transaction")
             // Add Homepage Fragment to the dedicated container
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, HomepageFragment())
-                .addToBackStack("homepage")
-                .commitNow()
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_container, HomepageFragment())
+            transaction.addToBackStack("homepage")
+            transaction.commit()
+            
+            // Update menu after fragment is added
+            invalidateOptionsMenu()
                 
             Log.d("MainActivity", "Fragment transaction completed")
-            Toast.makeText(this, "Welcome!", Toast.LENGTH_SHORT).show()
         } catch (e: Exception) {
             Log.e("MainActivity", "Error in navigateToHomepage", e)
             e.printStackTrace()
-            Toast.makeText(this, "Error navigating to homepage: ${e.message}", Toast.LENGTH_LONG).show()
         }
     }
 
@@ -118,7 +120,6 @@ class MainActivity : AppCompatActivity() {
             viewPager.currentItem = 1
         } catch (e: Exception) {
             e.printStackTrace()
-            Toast.makeText(this, "Error during logout", Toast.LENGTH_SHORT).show()
         }
     }
 }
