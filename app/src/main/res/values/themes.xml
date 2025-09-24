@@ -1,6 +1,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <style name="Base.Theme.MyTabLayout" parent="Theme.Material3.DayNight">
-        <item name="colorPrimary">#6366F1</item>
+        <item name="colorPrimary">@color/blue</item>
+        <!-- Custom ActionBar color -->
+        <item name="colorPrimarySurface">@color/blue</item>
+        <item name="android:statusBarColor">@color/blue</item>
+        
+        <!-- ActionBar text colors -->
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="actionMenuTextColor">@color/white</item>
+        <item name="titleTextColor">@color/white</item>
+        
         <!-- Ensure ActionBar is shown -->
         <item name="windowActionBar">true</item>
         <item name="windowNoTitle">false</item>

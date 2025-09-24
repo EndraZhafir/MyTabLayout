@@ -8,16 +8,22 @@
     android:background="@android:color/white"
     tools:context=".MainActivity">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:background="@color/blue"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <!-- Tab Layout -->
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/white"
-        android:layout_marginTop="78dp"
+        android:layout_marginTop="88dp"
         app:tabTextColor="#9CA3AF"
-        app:tabSelectedTextColor="#6366F1"
-        app:tabIndicatorColor="#6366F1"
+        app:tabSelectedTextColor="@color/blue"
+        app:tabIndicatorColor="@color/blue"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.viewpager2.widget.ViewPager2

@@ -1,11 +1,14 @@
 package com.endrazhafir.mytablayout
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import androidx.viewpager2.widget.ViewPager2
@@ -41,6 +44,12 @@ class MainActivity : AppCompatActivity() {
         viewPager.currentItem = 1
 
         supportActionBar?.elevation = 0f
+        
+        // Set ActionBar color programmatically
+        supportActionBar?.let { actionBar ->
+            val blueColor = ContextCompat.getColor(this, R.color.blue)
+            actionBar.setBackgroundDrawable(ColorDrawable(blueColor))
+        }
         
         // Handle back button properly
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
