@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".HomepageFragment">
 
-    <!-- Bagian atas dengan latar belakang biru -->
+    <!-- Bagian atas dengan background warna biru -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/top_blue_bg"
         android:layout_width="match_parent"
