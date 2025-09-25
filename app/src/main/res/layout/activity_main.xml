@@ -33,7 +33,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tab_layout" />
 
-    <!-- Fragment Container for Homepage -->
+    <!-- Fragment Container untuk Homepage -->
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"

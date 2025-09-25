@@ -12,10 +12,6 @@
     <string name="log_in">Log In</string>
     <string name="homepage">Homepage</string>
     <string name="welcome">Welcome</string>
-    <string name="your_email_and_phone_number_has_been_registered_and_activated">Your email and phone number has been registered and activated.</string>
-    <string name="your_email">Your email:</string>
-    <string name="your_phone_number">Your phone number:</string>
-    <string name="phone_number">Phone Number</string>
     <string name="login">Login</string>
     <string name="remember_me">Remember Me</string>
     <string name="forgot_password">Forgot Password ?</string>

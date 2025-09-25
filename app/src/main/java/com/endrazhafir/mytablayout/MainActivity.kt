@@ -40,18 +40,18 @@ class MainActivity : AppCompatActivity() {
             tab.text = TAB_TITLES[position]
         }.attach()
 
-        // Start with Login fragment (index 1)
+        // Login fragment (index 1)
         viewPager.currentItem = 1
 
         supportActionBar?.elevation = 0f
         
-        // Set ActionBar color programmatically
+        // Set ActionBar ke warna biru
         supportActionBar?.let { actionBar ->
             val blueColor = ContextCompat.getColor(this, R.color.blue)
             actionBar.setBackgroundDrawable(ColorDrawable(blueColor))
         }
         
-        // Handle back button properly
+        // Tombol back
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 if (isOnHomepage) {
@@ -84,23 +84,23 @@ class MainActivity : AppCompatActivity() {
         try {
             Log.d("MainActivity", "navigateToHomepage called")
             
-            // Replace the entire layout with homepage
+            // Mengganti layout dengan homepage fragment
             isOnHomepage = true
             
             Log.d("MainActivity", "Setting visibility")
-            // Hide tabs and viewpager, show fragment container
+            // Hide tabs dan viewpager, show fragment container
             tabLayout.visibility = android.view.View.GONE
             viewPager.visibility = android.view.View.GONE
             fragmentContainer.visibility = android.view.View.VISIBLE
 
             Log.d("MainActivity", "Starting fragment transaction")
-            // Add Homepage Fragment to the dedicated container
+            // Tambah homepage ke fragment container
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragment_container, HomepageFragment())
             transaction.addToBackStack("homepage")
             transaction.commit()
             
-            // Update menu after fragment is added
+            // Update menu setelah navigasi
             invalidateOptionsMenu()
                 
             Log.d("MainActivity", "Fragment transaction completed")
@@ -115,17 +115,17 @@ class MainActivity : AppCompatActivity() {
             isOnHomepage = false
             invalidateOptionsMenu()
 
-            // Show tabs and viewpager, hide fragment container
+            // Show tabs dan viewpager, hide fragment container
             tabLayout.visibility = android.view.View.VISIBLE
             viewPager.visibility = android.view.View.VISIBLE
             fragmentContainer.visibility = android.view.View.GONE
 
-            // Remove the homepage fragment from back stack
+            // Menghapus homepage fragment dari back stack
             if (supportFragmentManager.backStackEntryCount > 0) {
                 supportFragmentManager.popBackStack()
             }
 
-            // Navigate to login tab (index 1)
+            // Navigasi ke login fragment (index 1)
             viewPager.currentItem = 1
         } catch (e: Exception) {
             e.printStackTrace()

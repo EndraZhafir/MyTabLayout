@@ -24,7 +24,7 @@ class LoginFragment : Fragment() {
         val linkRegister = view.findViewById<TextView>(R.id.link_register)
 
         btnLogin.setOnClickListener {
-            // Navigate to Homepage after login
+            // Navigasi ke homepage setelah login berhasil
             try {
                 (activity as? MainActivity)?.navigateToHomepage()
             } catch (e: Exception) {
@@ -33,7 +33,7 @@ class LoginFragment : Fragment() {
         }
 
         linkRegister.setOnClickListener {
-            // Switch to Register tab (index 0)
+            // Register fragment (index 0)
             val mainActivity = activity as MainActivity
             val viewPager = mainActivity.findViewById<androidx.viewpager2.widget.ViewPager2>(R.id.view_pager)
             viewPager.currentItem = 0

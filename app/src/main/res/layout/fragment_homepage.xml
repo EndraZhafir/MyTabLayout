@@ -7,19 +7,15 @@
     android:orientation="vertical"
     tools:context=".HomepageFragment">
 
-    <!-- ConstraintLayout di atas untuk background biru (menutupi area status bar) -->
+    <!-- Bagian atas dengan latar belakang biru -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/top_blue_bg"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="@color/blue"
         android:fitsSystemWindows="true">
-        
-        <!-- Bisa ditambah content di sini kalau perlu -->
-        
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- LinearLayout di bawah untuk konten utama -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -32,14 +28,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Welcome!"
+            android:text="@string/welcome"
             android:textColor="#1F2937"
             android:textSize="32sp"
             android:textStyle="bold"
             android:gravity="center"
             android:layout_marginBottom="24dp" />
 
-        <!-- Welcome Animation/Image Placeholder -->
         <TextView
             android:layout_width="200dp"
             android:layout_height="200dp"
